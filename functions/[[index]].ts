@@ -51,11 +51,7 @@ async function handleRequest(request: Request): Promise<Response> {
 			}
 		})
 	}
-	if([DISCORD_EMBED_UA, DISCORD_IMAGE_PROXY_UA].includes(userAgent ?? "")) {
-		// likely discord embedder, so block to prevent preview of the redirect
-		return new Response("OK")
-	}
-	if(request.url === "/favicon.ico") {
+	if([DISCORD_EMBED_UA, DISCORD_IMAGE_PROXY_UA].includes(userAgent ?? "") || request.url === "/favicon.ico") {
 		return new Response("Not Found", { status: 404 });
 	}
 	const randomLink = links[Math.floor(Math.random() * links.length)];
