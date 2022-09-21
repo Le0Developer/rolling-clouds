@@ -41,13 +41,13 @@ export interface Env {}
 async function handleRequest(request: Request): Promise<Response> {
 	const imageType = ["jpg", "jpeg", "png", "webp", "gif", "avif"].find(ext => request.url.includes(ext));
 	const userAgent = request.headers.get("user-agent");
-	if(userAgent === DISCORD_EMBED_UA && imageType || request.url.includes("debug")) {
+	if(userAgent === DISCORD_EMBED_UA && imageType) {
 		// discord embedder but its an image url
 		// return a fake image, so an image is embedded
 		// because image embedder is blocked, this will result in a never loading image
 		return new Response(fromHexString(PLACEHOLDER_IMAGE).buffer, {
 			headers: {
-				"content-type": "image/jpg"
+				"content-type": `image/${imageType}`
 			}
 		})
 	}
