@@ -6,7 +6,6 @@ const links = [
 	"https://www.youtube.com/watch?v=DLzxrzFCyOs",
 	"https://www.youtube.com/watch?v=TfAMNOaZaAE",
 	"https://www.youtube.com/watch?v=Lrj2Hq7xqQ8",
-	"https://www.youtube.com/watch?v=hYowILOGcwo",
 	"https://www.youtube.com/watch?v=bxqLsrlakK8",
 	"https://www.youtube.com/watch?v=MO7bRMa9bmA&t=36s",
 	"https://www.youtube.com/watch?v=nrsnN23tmUA",
